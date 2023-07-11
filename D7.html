@@ -103,14 +103,15 @@
          Scrivi una funzione per che cambi il testo dei p figli di un div
         */
 
-      // const changePcontent = function () {
-      //   const div = document.getElementsByTagName("div");
-      //   const p = div[0];
-      //   const childP = p.querySelector("p");
-      //   childP.innerText =
-      //     "Duis dolor reprehenderit dolor consectetur esse deserunt ea excepteur commodo laboris occaecat elit anim.";
-      // };
-      // changePcontent();
+      const changePcontent = function () {
+        const pChilds = document.querySelectorAll("div p");
+        for (let i = 0; i < pChilds.length; i++) {
+          const p = pChilds[i];
+          p.innerText =
+            "Duis dolor reprehenderit dolor consectetur esse deserunt ea excepteur commodo laboris occaecat elit anim.";
+        }
+      };
+      changePcontent();
 
       /* ESERCIZIO 4
          Scrivi una funzione che cambi la proprietà href di ogni link (tranne quello nel footer) con il valore https://www.google.com
@@ -193,7 +194,8 @@
         const footer = document.querySelector("footer");
         const footerLink = document.querySelector("footer a");
         const url = footerLink.href;
-        (footer.onclick = revealFooterLink), alert(url);
+        footer.onclick = revealFooterLink;
+        // alert(url);
       };
       revealFooterLink();
 
